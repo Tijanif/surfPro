@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="icons8-summer-64.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootswatch/4.4.1/minty/bootstrap.min.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js" integrity="sha512-WNLxfP/8cVYL9sj8Jnp6et0BkubLP31jhTG9vhL/F5uEZmg5wEzKoXp1kJslzPQWwPT1eyMiSxlKCgzHLOTOTQ==" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js" integrity="sha384-1CmrxMRARb6aLqgBO7yyAxTOQE2AKb9GfXnEo760AUcUmFx3ibVJJAzGytlQcNXd" crossorigin="anonymous"></script>
+    <title>Presenting Data</title>
+    <style>
+    </style>
+</head>
+<body>
+    <header class="bg-primary p-2 text-center">
+        <h4 class="text-white m-0">SurfPro</h4>
+    </header>
+
+    <div class="container my-md-5 my-4 mx-sm-auto mx-4 p-md-5 p-4 w-auto rounded bg-light border">
+        <div class="text-center">
+            <h1>Get The Weather For a Location</h1>
+            <p class="lead">Enter Your Location &amp; Expert Level</p>
+        </div>
+        <form onsubmit="return getWeather();">
+            <div class="row">
+                <div class="col-md-4 col-12 pt-4">
+                    <label for="expert">Expert Level</label>
+                    <select class="form-control" id="expertise" required>
+                        <option value="Novice">Novice</option>
+                        <option value="Intermediate">Intermediate</option>
+                        <option value="Expert">Expert</option>
+                    </select>
+                </div>
+                <div class="col-md-5 col-12 pt-4 position-relative">
+                    <label for="location">Location</label>
+                    <input type="text" autocomplete="off" placeholder="Eg: Los Angeles" class="form-control" id="location" required onkeyup="getCityList();">
+                    <div class="position-absolute ml-n3 px-3 pt-2 w-100" style="z-index:2">
+                        <div id="cityList" class="bg-white p-2 shadow rounded-sm d-none">
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-12 pt-md-4 pt-0">
+                    <label>&nbsp;</label>
+                    <input type="submit" value="Get Weather" class="btn btn-primary form-control" onsubmit="getWeather();">
+                </div>
+            </div>
+        </form>
+    </div>
+
+   <div id="resultBox" class="container mx-auto bg-light text-center p-md-5 p-4 d-none"></div>
+
+    <footer class="mt-5 p-3 text-center bg-light">
+        SurfPro 2020 &copy;
+    </footer>
+    <script src="surfPro.js"></script>
+</body>
+</html>
